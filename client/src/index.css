@@ -2,6 +2,11 @@ html {
   height: 100%;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -68,4 +73,21 @@ code {
 
 .r-text-small {
   font-size: 3vmin;
+}
+
+.r-subheading {
+  font-size: 4vmin;
+}
+
+.img-github {
+  max-width: 20vmin;
+}
+
+.link-plain a {
+  color:inherit;
+  text-decoration: none;
+}
+
+.link-plain a:hover {
+  color: inherit;
 }

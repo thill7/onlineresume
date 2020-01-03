@@ -5,16 +5,14 @@ export default class UserInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name:'',
+            userObject:undefined,
             login:props.login,
-            url:'',
-            avatar_url:''
         };
     }
 
     componentDidMount() {
         axios.get("users/get/"+this.state.login).then(userData => {
-            this.setState({name:userData.data.name,url:userData.data.url,avatar_url:userData.data.avatar_url});
+            this.setState({userObject:userData.data});
             console.log(this.state);
         })
         .catch(err => console.log(err));
@@ -22,29 +20,29 @@ export default class UserInfo extends Component {
 
     render() {
 
-        var {name, login, url, avatar_url} = this.state;
+        var {userObject} = this.state;
 
         const imgStyle = {
             maxWidth: "15vh"            
         };
 
-        if(url !== '') {
+        if(userObject != undefined) {
             return(
-                
-                <div className="media p-3 bg-dark text-white rounded">
-                    <img src={avatar_url} alt={login} style={imgStyle} className="mr-3 mt-3 rounded-circle" />
+                <div className="media p-3 bg-primary m-4 text-white rounded">
+                    <img src={userObject.avatar_url} alt={userObject.login} className="mr-3 rounded-circle img-github" />
                     <div className="media-body">
-                    <h4>{name}</h4>
-                    <p></p>
-                    <p>{login}</p>
-                    <p>{url}</p>
+                    <h4 className="r-subheading">{userObject.name}</h4>
+                    <p className="r-text-small"><span className="font-weight-bold">Username</span>: {userObject.login}</p>
+                    <p className="r-text-small"><span className="font-weight-bold">Public Repos</span>: {userObject.public_repos}</p>
+                    <p>{userObject.html_url}</p>
+                    <p className="r-text-small"><span className="font-weight-bold">Bio</span>: {userObject.bio}</p>
                     </div>
                 </div>
                 
             );
         }
         return(
-            <div className="alert alert-info lead">
+            <div className="lead p-3 bg-info m-4 text-white rounded">
                 Loading...
             </div>
         );
