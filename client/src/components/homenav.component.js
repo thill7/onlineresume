@@ -8,10 +8,10 @@ export default class HomeNav extends Component {
 
     render() {
         return(
-            <div className="home-nav">
-                <Link className="r-text-small" to="/experience">Experience</Link>
-                <Link className="r-text-small" to="/education">Education</Link>
-                <Link className="r-text-small" to="/contact">Contact</Link>
+            <div className="home-nav flex-column flex-md-row">
+                <Link className="r-subheading flex-fill" to="/experience">Experience</Link>
+                <Link className="r-subheading flex-fill" to="/education">Education</Link>
+                <Link className="r-subheading flex-fill" to="/contact">Contact</Link>
             </div>
         );
     }

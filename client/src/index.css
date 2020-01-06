@@ -34,17 +34,17 @@ code {
 }
 
 .home-nav {
-  width: 60vmax;
+  width: 80vmin;
   display: inline-flex;
   justify-content: space-evenly;
 }
 
 .home-nav a {
+  text-align: center;
   font-weight: bold;
   background: #222222;
   padding: 2vmin;
   transition: filter 0.25s ease;
-  border-radius: 0.5vmax;
   color: ghostwhite;
   text-decoration: none;
 }
@@ -56,27 +56,27 @@ code {
 }
 
 .r-header-1 {
-  font-size: 12vmin;
+  font-size: 12vmin !important;
 }
 
 .r-header-2 {
-  font-size: 10vmin;
+  font-size: 10vmin !important;
 }
 
 .r-header-3 {
-  font-size: 8vmin;
+  font-size: 8vmin !important;
 }
 
 .r-header-4 {
-  font-size: 6vmin;
+  font-size: 6vmin !important;
 }
 
 .r-text-small {
-  font-size: 3vmin;
+  font-size: 3vmin !important;
 }
 
 .r-subheading {
-  font-size: 4vmin;
+  font-size: 4vmin !important;
 }
 
 .img-github {
@@ -90,4 +90,46 @@ code {
 
 .link-plain a:hover {
   color: inherit;
+}
+
+.main-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background: #222222;
+  position: sticky;
+  margin-bottom: 2vmax;
+  box-shadow: 0 -1vmin 2.5vmin 0.5vmin black;
+}
+
+.main-nav a {
+  padding: 1vmax;
+  background: #2A2A2A;
+  text-align: center;
+}
+
+.main-nav-link {
+  transition: filter 0.25s ease;
+  color: ghostwhite;
+}
+
+.main-nav-link:hover {
+  filter:brightness(125%);
+  text-decoration: none;
+  color: ghostwhite;
+}
+
+.main-nav a.main-nav-active {
+  color:ghostwhite;
+}
+
+.main-nav a.main-nav-active:hover {
+  text-decoration: none;
+  color:ghostwhite;
+}
+
+.wou {
+  color: ghostwhite;
+  background: #db0a29;
 }

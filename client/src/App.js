@@ -1,18 +1,19 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'jquery/dist/jquery.min';
+import 'bootstrap/dist/js/bootstrap.bundle';
 import './App.css';
 
 import Home from './components/home.component';
 import Contact from './components/contact.component';
+import MainNav from './components/mainnav.component';
+import Experience from './components/experience.component';
+import Education from './components/education.component';
 
 function App() {
   return (
     <Router>
-    <Link to="/">Home</Link>
-    <Link to="/contact">Contact</Link>
-    <Link to="/experience">Experience</Link>
-    <Link to="/education">Education</Link>
     <Switch>
       <Route exact path="/">
         <Home />
@@ -21,13 +22,18 @@ function App() {
         <Contact />
       </Route>
       <Route path="/experience">
-        <h2>Experience</h2>
+        <Experience />
       </Route>
       <Route path="/education">
-        <h2>Education</h2>
+        <Education />
       </Route>
-      </Switch>  
+    </Switch>  
+    <footer className="px-4 text-center">
+      <hr />
+      <p>Tanner Hill – Western Oregon University {new Date().getFullYear()}</p>
+    </footer>
     </Router>
+    
   );
 }
 

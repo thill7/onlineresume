@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import HomeNav from './homenav.component';
+import MainNav from './mainnav.component';
 
 export default class Home extends Component {
     constructor(props) {
