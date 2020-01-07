@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const axios = require('axios');
 const dotenv = require('dotenv').config();
+const mongoose = require('mongoose');
+const language = mongoose.model("language");
 
 router.get('/get',async (req,res) => {
     if(process.env.TOKEN == undefined) {
@@ -22,7 +24,9 @@ router.get('/get/languages', async (req,res) => {
       }
     });
 
-    var languages = [];
+    var languageDB = await language.find();
+
+    var languageGH = [];
 
     var requests = [];
 
@@ -35,16 +39,16 @@ router.get('/get/languages', async (req,res) => {
             })
             .then(response => {
                 for(var prop in response.data) {
-                    let languageIndex = languages.findIndex(l => l.language == prop);
+                    let languageIndex = languageGH.findIndex(l => l.language == prop);
                     if(languageIndex != -1) {
-                        languages[languageIndex].bytes += response.data[prop];
+                        languageGH[languageIndex].bytes += response.data[prop];
                     }
                     else {
                         var newLang = {
                             language: prop,
                             bytes: response.data[prop]
                         };
-                        languages.push(newLang);
+                        languageGH.push(newLang);
                     }
                 }
             })
@@ -54,9 +58,16 @@ router.get('/get/languages', async (req,res) => {
 
     await Promise.all(requests);
 
-    languages.sort((a,b) => b.bytes - a.bytes);
+    var combinedData = [];
 
-    res.json(languages);
+    for(let i = 0; i < languageDB.length; i++) {
+        var lang = languageDB[i].toObject();
+        combinedData.push(Object.assign(lang,languageGH.find(lgh => lgh.language == lang.language)));
+    }
+
+    combinedData.sort((a,b) => b.bytes - a.bytes);
+
+    res.json(combinedData);
 });
 
 module.exports = router;
