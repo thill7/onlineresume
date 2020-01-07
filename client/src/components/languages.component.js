@@ -73,6 +73,10 @@ export default class Languages extends Component {
                                                 <dt className="col-md">School-taught</dt>
                                                 <dd className="col-md"><FontAwesomeIcon icon={language.schoolTaught ? faCheckCircle : faWindowClose}/></dd>
                                             </dl>
+                                            <dl className="row">
+                                                <dt className="col-md">Info</dt>
+                                                <dd className="col-md">{language.info}</dd>
+                                            </dl>
                                         </div>
                                     </div>
                                 </div>
