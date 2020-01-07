@@ -62,20 +62,17 @@ export default class Languages extends Component {
                                         <div className="card-header bg-success"><p className="r-header-3"><span className="font-weight-bold">{language.language}</span></p></div>
                                         <div className="card-body">
                                             <dl className="row">
-                                                <dt className="col-md">Bytes written (from Github)</dt>
-                                                <dd className="col-md">{language.bytes}</dd>
-                                            </dl>
-                                            <dl className="row">
-                                                <dt className="col-md">Self-taught</dt>
-                                                <dd className="col-md"><FontAwesomeIcon icon={language.selfTaught ? faCheckCircle : faWindowClose}/></dd>
-                                            </dl>
-                                            <dl className="row">
-                                                <dt className="col-md">School-taught</dt>
-                                                <dd className="col-md"><FontAwesomeIcon icon={language.schoolTaught ? faCheckCircle : faWindowClose}/></dd>
-                                            </dl>
-                                            <dl className="row">
-                                                <dt className="col-md">Info</dt>
-                                                <dd className="col-md">{language.info}</dd>
+                                                <dt className="col-md-6">Bytes written (from Github)</dt>
+                                                <dd className="col-md-6">{language.bytes}</dd>
+                                                <hr />
+                                                <dt className="col-md-6">Self-taught</dt>
+                                                <dd className="col-md-6"><FontAwesomeIcon icon={language.selfTaught ? faCheckCircle : faWindowClose}/></dd>
+                                                <hr />
+                                                <dt className="col-md-6">School-taught</dt>
+                                                <dd className="col-md-6"><FontAwesomeIcon icon={language.schoolTaught ? faCheckCircle : faWindowClose}/></dd>
+                                                <hr />
+                                                <dt className="col-md-12">Info</dt>
+                                                <dd className="col-md-12">{language.info}</dd>
                                             </dl>
                                         </div>
                                     </div>
