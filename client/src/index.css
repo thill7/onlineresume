@@ -143,3 +143,8 @@ code {
 .img-work {
   max-width: 100%;
 }
+
+.experience-toggle button {
+  text-align: center;
+  color: ghostwhite;
+}
