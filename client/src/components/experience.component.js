@@ -29,7 +29,7 @@ export default class Experience extends Component {
         return(
             <div>
                 <MainNav page="1" />
-                <div className="experience-toggle d-flex flex-column flex-md-row">
+                <div className="experience-toggle d-flex flex-column flex-md-row my-4">
                     <button onClick={() => {this.onSetToggle(0);}} className={"r-subheading flex-fill"+(toggle == 0 ? " bg-secondary" : " bg-darker")}>Programming</button>
                     <button onClick={() => {this.onSetToggle(1);}} className={"r-subheading flex-fill"+(toggle == 1 ? " bg-secondary" : " bg-darker")}>Work History</button>
                 </div>
@@ -37,7 +37,6 @@ export default class Experience extends Component {
                     <div style={toggle == 1 ? noDisplay : {}}>
                         <Languages  />
                     </div>
-                    <hr />
                     <div style={toggle == 0 ? noDisplay : {}}>
                         <Work  />
                     </div>
