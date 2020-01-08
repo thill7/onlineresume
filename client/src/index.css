@@ -147,4 +147,6 @@ code {
 .experience-toggle button {
   text-align: center;
   color: ghostwhite;
+  border: none;
+  padding: 1vmin;
 }

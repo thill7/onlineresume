@@ -34,9 +34,14 @@ export default class Experience extends Component {
                     <button onClick={() => {this.onSetToggle(1);}} className={"r-subheading flex-fill"+(toggle == 1 ? " bg-secondary" : " bg-darker")}>Work History</button>
                 </div>
                 <div className="container">
-                    <Languages style={toggle == 1 ? noDisplay : {}} />
+                    <div style={toggle == 1 ? noDisplay : {}}>
+                        <Languages  />
+                    </div>
                     <hr />
-                    <Work style={toggle == 0 ? noDisplay : {}} />
+                    <div style={toggle == 0 ? noDisplay : {}}>
+                        <Work  />
+                    </div>
+                    
                 </div>
             </div>
         )
