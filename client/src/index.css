@@ -138,11 +138,11 @@ code {
 .wou {
   color: ghostwhite;
   background: rgb(167,169,172);
-  padding: 1vmin;
+  padding: 2vmax;
 }
 
 .wou img {
-  height:20vmax;
+  height:15vmax;
   width: 100%;
   object-fit:contain;
 }
