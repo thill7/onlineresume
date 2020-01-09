@@ -51,10 +51,10 @@ export default class Education extends Component {
                     <div className="wou rounded"><img src="/images/logo.svg" /></div>
                     <hr />
                     <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-md-6 d-flex justify-content-center">
                             <button onClick={() => {this.onFilterChange(1);}} className={"btn r-subheading my-2" + (filter == 1 ? " active btn-secondary" : " btn-info")}><span className="font-weight-bold">Major: </span>Computer Science</button>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 d-flex justify-content-center">
                             <button onClick={() => {this.onFilterChange(2);}} className={"btn r-subheading my-2" + (filter == 2 ? " active btn-secondary" : " btn-info")}><span className="font-weight-bold">Minor: </span>Art and Design</button>
                         </div>
                     </div>
