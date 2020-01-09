@@ -48,7 +48,7 @@ export default class Education extends Component {
             <div>
                 <MainNav page="2" />
                 <div className="container">
-                    <div className="wou p-3 rounded"><img src="/images/logo.svg" /></div>
+                    <div className="wou rounded"><img src="/images/logo.svg" /></div>
                     <hr />
                     <div className="row">
                         <div className="col-md-6">

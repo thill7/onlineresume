@@ -137,7 +137,8 @@ code {
 
 .wou {
   color: ghostwhite;
-  background: #db0a29;
+  background: rgb(167,169,172);
+  padding: 1vmin;
 }
 
 .wou img {
