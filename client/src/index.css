@@ -140,6 +140,12 @@ code {
   background: #db0a29;
 }
 
+.wou img {
+  height:20vmax;
+  width: 100%;
+  object-fit:contain;
+}
+
 .img-work {
   max-width: 100%;
 }
