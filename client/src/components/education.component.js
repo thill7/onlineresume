@@ -29,7 +29,7 @@ export default class Education extends Component {
                         }
                     })
                 });
-                this.setState({classData:data.data,tagsSelected:[],allTags:newTags,isLoaded:true});
+                this.setState({classData:data.data.sort((a,b) => b.cardType - a.cardType),tagsSelected:[],allTags:newTags,isLoaded:true});
             })
             .catch(err => console.log(err));
     }
@@ -45,7 +45,7 @@ export default class Education extends Component {
 
     onTagSelect(tag) {
         if(this.state.tagsSelected.includes(tag)) {
-            this.setState({tagsSelected:this.state.tagsSelected.filter(t => t != tag)});
+            this.setState({tagsSelected:this.state.tagsSelected.filter(t => t != tag).sort()});
         }
         else {
             let newSelected = this.state.tagsSelected;
@@ -80,7 +80,7 @@ export default class Education extends Component {
                     <hr />
                     <div className="row">
                         <div className="col-md-6 d-flex justify-content-center">
-                            <button onClick={() => {this.onFilterChange(1);}} className={"btn r-subheading my-2" + (filter == 1 ? " active btn-secondary" : " btn-info")}><span className="font-weight-bold">Major: </span>Computer Science</button>
+                            <button onClick={() => {this.onFilterChange(1);}} className={"btn r-subheading my-2" + (filter == 1 ? " active btn-secondary" : " btn-success")}><span className="font-weight-bold">Major: </span>Computer Science</button>
                         </div>
                         <div className="col-md-6 d-flex justify-content-center">
                             <button onClick={() => {this.onFilterChange(2);}} className={"btn r-subheading my-2" + (filter == 2 ? " active btn-secondary" : " btn-info")}><span className="font-weight-bold">Minor: </span>Art and Design</button>
@@ -88,7 +88,7 @@ export default class Education extends Component {
                     </div>
                     <hr />
                     <div className="list-inline">
-                        <p className="m-1 font-weight-bold text-white">Filter By Tag: </p>
+                        <span className="m-1 font-weight-bold r-text-small">Filter By Tag: </span>
                         <button className="btn btn-danger m-1 r-text-small" onClick={() => {this.onClearTags()}} ><FontAwesomeIcon icon={faWindowClose} /></button>
                     {
                         allTags.map(t => {
@@ -126,7 +126,7 @@ export default class Education extends Component {
                             return(
                                 
                                 <div className="col-md-6 my-3" key={data._id} style={displayStyle}>
-                                    <div className="card bg-secondary text-white">
+                                    <div className="card bg-darker text-white">
                                         <div className={data.cardType == "CS" ? "card-header bg-success" : "card-header bg-info"}>
                                             <p className="r-subheading">{data.className}</p>
                                             <p className="r-text-small">{data.cardType+data.classNumber}</p>
