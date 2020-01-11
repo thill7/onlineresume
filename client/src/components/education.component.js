@@ -29,7 +29,9 @@ export default class Education extends Component {
                         }
                     })
                 });
-                this.setState({classData:data.data.sort((a,b) => b.cardType - a.cardType),tagsSelected:[],allTags:newTags,isLoaded:true});
+                let newClassData = data.data.sort((a,b) => a > b ? 1 : (b > a ? -1 : 0));
+                newTags.sort();
+                this.setState({classData:newClassData,tagsSelected:[],allTags:newTags,isLoaded:true});
             })
             .catch(err => console.log(err));
     }
@@ -45,7 +47,7 @@ export default class Education extends Component {
 
     onTagSelect(tag) {
         if(this.state.tagsSelected.includes(tag)) {
-            this.setState({tagsSelected:this.state.tagsSelected.filter(t => t != tag).sort()});
+            this.setState({tagsSelected:this.state.tagsSelected.filter(t => t != tag)});
         }
         else {
             let newSelected = this.state.tagsSelected;
