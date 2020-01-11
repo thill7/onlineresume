@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
 import MainNav from './mainnav.component';
 import Axios from 'axios';
 
@@ -47,10 +48,14 @@ export default class Education extends Component {
             this.setState({tagsSelected:this.state.tagsSelected.filter(t => t != tag)});
         }
         else {
-            var newSelected = this.state.tagsSelected;
+            let newSelected = this.state.tagsSelected;
             newSelected.push(tag);
             this.setState({tagsSelected:newSelected});
         }
+    }
+
+    onClearTags() {
+        this.setState({tagsSelected:[]});
     }
 
     render() {
@@ -82,6 +87,7 @@ export default class Education extends Component {
                         </div>
                     </div>
                     <div className="list-inline py-2">
+                        <button className="btn btn-danger m-1 r-subheading" onClick={() => {this.onClearTags()}} ><FontAwesomeIcon icon={faWindowClose} /></button>
                     {
                         allTags.map(t => {
                             return(
