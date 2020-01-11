@@ -86,12 +86,13 @@ export default class Education extends Component {
                             <button onClick={() => {this.onFilterChange(2);}} className={"btn r-subheading my-2" + (filter == 2 ? " active btn-secondary" : " btn-info")}><span className="font-weight-bold">Minor: </span>Art and Design</button>
                         </div>
                     </div>
-                    <div className="list-inline py-2">
-                        <button className="btn btn-danger m-1 r-subheading" onClick={() => {this.onClearTags()}} ><FontAwesomeIcon icon={faWindowClose} /></button>
+                    <hr />
+                    <div className="list-inline">
+                        <button className="btn btn-danger m-1 r-text-small" onClick={() => {this.onClearTags()}} ><FontAwesomeIcon icon={faWindowClose} /></button>
                     {
                         allTags.map(t => {
                             return(
-                                <button className={"btn m-1 r-subheading"+(tagsSelected.includes(t) ? " btn-secondary" : " btn-info")} key={t} onClick={() => {this.onTagSelect(t)}}>{t}</button>
+                                <button className={"btn m-1 r-text-small"+(tagsSelected.includes(t) ? " btn-secondary" : " btn-info")} key={t} onClick={() => {this.onTagSelect(t)}}>{t}</button>
                             )
                         })
                     }
