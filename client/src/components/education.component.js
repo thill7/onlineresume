@@ -29,7 +29,7 @@ export default class Education extends Component {
                         }
                     })
                 });
-                let newClassData = data.data.sort((a,b) => a > b ? 1 : (b > a ? -1 : 0));
+                let newClassData = data.data.sort((a,b) => a.cardType > b.cardType ? 1 : (b.cardType > a.cardType ? -1 : 0));
                 newTags.sort();
                 this.setState({classData:newClassData,tagsSelected:[],allTags:newTags,isLoaded:true});
             })
