@@ -85,7 +85,7 @@ export default class Education extends Component {
                     {
                         allTags.map(t => {
                             return(
-                                <button className={"btn m-1 r-subheading"+(tagsSelected.includes(t) ? " btn-secondary" : " btn-info")} key={tag} onClick={() => {this.onTagSelect(t)}}>{t}</button>
+                                <button className={"btn m-1 r-subheading"+(tagsSelected.includes(t) ? " btn-secondary" : " btn-info")} key={t} onClick={() => {this.onTagSelect(t)}}>{t}</button>
                             )
                         })
                     }
