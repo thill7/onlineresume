@@ -6,7 +6,8 @@ var classData = new Schema({
     classNumber: Number,
     cardType: String,
     info: String,
-    dateTaken: String
+    dateTaken: String,
+    tags: [String]
 });
 
 module.exports = classData;

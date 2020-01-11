@@ -11,13 +11,25 @@ export default class Education extends Component {
         this.state = {
             classData: [],
             isLoaded: false,
-            filter: 0
+            filter: 0,
+            allTags: [],
+            tagsSelected: []
         };
     }
 
     componentDidMount() {
         Axios.get('/classes')
-            .then(data => this.setState({classData:data.data,isLoaded:true}))
+            .then(data => {
+                var newTags = [];
+                data.data.forEach((tags) => {
+                    tags.tags.forEach((tag) => {
+                        if(!newTags.includes(tag)) {
+                            newTags.push(tag);
+                        }
+                    })
+                });
+                this.setState({classData:data.data,tagsSelected:[],allTags:newTags,isLoaded:true});
+            })
             .catch(err => console.log(err));
     }
 
@@ -30,8 +42,19 @@ export default class Education extends Component {
         }
     }
 
+    onTagSelect(tag) {
+        if(this.state.tagsSelected.includes(tag)) {
+            this.setState({tagsSelected:this.state.tagsSelected.filter(t => t != tag)});
+        }
+        else {
+            var newSelected = this.state.tagsSelected;
+            newSelected.push(tag);
+            this.setState({tagsSelected:newSelected});
+        }
+    }
+
     render() {
-        var {classData,isLoaded,filter} = this.state;
+        var {classData,isLoaded,allTags,tagsSelected,filter} = this.state;
 
         if(classData.length < 1) {
             return(
@@ -58,6 +81,15 @@ export default class Education extends Component {
                             <button onClick={() => {this.onFilterChange(2);}} className={"btn r-subheading my-2" + (filter == 2 ? " active btn-secondary" : " btn-info")}><span className="font-weight-bold">Minor: </span>Art and Design</button>
                         </div>
                     </div>
+                    <div className="list-inline">
+                    {
+                        allTags.map(t => {
+                            return(
+                                <button className={"btn m-1 r-subheading"+(tagsSelected.includes(t) ? " btn-secondary" : " btn-info")} key={tag} onClick={() => {this.onTagSelect(t)}}>{t}</button>
+                            )
+                        })
+                    }
+                    </div>
                     <hr />
                     <p className="r-header-3">Coursework</p>
                     <div className="row">
@@ -78,6 +110,11 @@ export default class Education extends Component {
                                     };
                                 }
                             } 
+                            else if(tagsSelected.length > 0 && data.tags.filter(tag => tagsSelected.includes(tag).legnth == 0)) {
+                                displayStyle = {
+                                    display:"none"
+                                };
+                            }
                             return(
                                 
                                 <div className="col-md-6 my-3" key={data._id} style={displayStyle}>
