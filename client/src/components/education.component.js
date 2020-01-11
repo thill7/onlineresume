@@ -88,6 +88,7 @@ export default class Education extends Component {
                     </div>
                     <hr />
                     <div className="list-inline">
+                        <p className="m-1 font-weight-bold text-white">Filter By Tag: </p>
                         <button className="btn btn-danger m-1 r-text-small" onClick={() => {this.onClearTags()}} ><FontAwesomeIcon icon={faWindowClose} /></button>
                     {
                         allTags.map(t => {
