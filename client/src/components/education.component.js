@@ -81,7 +81,7 @@ export default class Education extends Component {
                             <button onClick={() => {this.onFilterChange(2);}} className={"btn r-subheading my-2" + (filter == 2 ? " active btn-secondary" : " btn-info")}><span className="font-weight-bold">Minor: </span>Art and Design</button>
                         </div>
                     </div>
-                    <div className="list-inline">
+                    <div className="list-inline py-2">
                     {
                         allTags.map(t => {
                             return(
@@ -110,7 +110,7 @@ export default class Education extends Component {
                                     };
                                 }
                             } 
-                            else if(tagsSelected.length > 0 && data.tags.filter(tag => tagsSelected.includes(tag).legnth == 0)) {
+                            if(tagsSelected.length > 0 && data.tags.filter(tag => tagsSelected.includes(tag)).length == 0) {
                                 displayStyle = {
                                     display:"none"
                                 };
