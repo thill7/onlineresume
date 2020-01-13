@@ -137,6 +137,16 @@ export default class Education extends Component {
                                         <div className="card-body collapse" id={data.cardType+data.classNumber}>
                                             {ReactHtmlParser(data.info)}
                                         </div>
+                                        <div className="card-footer">
+                                            <p className="font-italic">Taken {data.dateTaken}.</p>
+                                            <div className="list-inline"><span className="font-weight-bold">Tags: </span>
+                                            {
+                                                data.tags.map(tag => {
+                                                    return(<span className="badge badge-secondary">{tag}</span>)
+                                                })
+                                            }
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             );
