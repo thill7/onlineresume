@@ -142,7 +142,7 @@ export default class Education extends Component {
                                             <div className="list-inline"><span className="font-weight-bold">Tags: </span>
                                             {
                                                 data.tags.map(tag => {
-                                                    return(<span className="badge badge-secondary my-1 p-1">{tag}</span>)
+                                                    return(<span className="badge badge-secondary mx-1 p-1">{tag}</span>)
                                                 })
                                             }
                                             </div>
