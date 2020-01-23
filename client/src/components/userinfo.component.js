@@ -43,7 +43,7 @@ export default class UserInfo extends Component {
         }
         return(
             <div className="lead p-3 bg-info m-4 text-white rounded">
-                Loading...
+                Either the Github servers are not responding, or this website is still loading.
             </div>
         );
     }
