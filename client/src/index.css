@@ -157,3 +157,12 @@ code {
   border: none;
   padding: 1vmin;
 }
+
+@keyframes spin {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}

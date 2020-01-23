@@ -15,7 +15,7 @@ export default class Home extends Component {
                 <h2 className="r-header-1">&lt;Tanner Hill /&gt;</h2>
                 <p className="r-header-4">Computer Science B.Sc.</p>
                 <HomeNav />
-                <UserInfo />
+                <UserInfo login="thill7"/>
             </div>
         );
     }

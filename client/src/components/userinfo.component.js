@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import '@fortawesome/fontawesome-svg-core';
+import {faSync} from '@fortawesome/free-solid-svg-icons';
 
 export default class UserInfo extends Component {
     constructor(props) {
@@ -43,7 +45,7 @@ export default class UserInfo extends Component {
         }
         return(
             <div className="lead p-3 bg-info m-4 text-white rounded">
-                Either the Github servers are not responding, or this website is still loading.
+                <FontAwesomeIcon icon={faSync} className="spinner" />
             </div>
         );
     }
