@@ -89,6 +89,19 @@ code {
   max-width: 20vmin;
 }
 
+.link-github {
+  color: ghostwhite !important;
+}
+.link-github:hover {
+  color: ghostwhite !important;
+}
+.link-github:active {
+  color: ghostwhite !important;
+}
+.link-github:visited {
+  color: ghostwhite !important;
+}
+
 .link-plain a {
   color:inherit !important;
   text-decoration: none !important;
