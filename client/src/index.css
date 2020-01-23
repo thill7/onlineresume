@@ -90,12 +90,12 @@ code {
 }
 
 .link-plain a {
-  color:inherit;
-  text-decoration: none;
+  color:inherit !important;
+  text-decoration: none !important;
 }
 
 .link-plain a:hover {
-  color: inherit;
+  color: inherit !important;
 }
 
 .main-nav {
