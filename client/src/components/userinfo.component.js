@@ -26,7 +26,7 @@ export default class UserInfo extends Component {
 
         if(userObject != undefined) {
             return(
-                <div className="media p-3 bg-primary m-4 text-white rounded">
+                <div className="media p-3 bg-darker m-4 text-white rounded">
                     <img src={userObject.avatar_url} alt={userObject.login} className="mr-3 rounded-circle img-github" />
                     <div className="media-body">
                     <h4 className="r-subheading"><span className="font-weight-bold">Github</span>: <a className="link-github" href={userObject.html_url}>{userObject.login}</a></h4>
