@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import '@fortawesome/fontawesome-svg-core';
+import {FontAwesomeIcon} from '@fortawesome/fontawesome-svg-core';
 import {faSync} from '@fortawesome/free-solid-svg-icons';
 
 export default class UserInfo extends Component {
