@@ -24,20 +24,13 @@ export default class UserInfo extends Component {
 
         var {userObject} = this.state;
 
-        const imgStyle = {
-            maxWidth: "15vh"            
-        };
-
         if(userObject != undefined) {
             return(
                 <div className="media p-3 bg-primary m-4 text-white rounded">
                     <img src={userObject.avatar_url} alt={userObject.login} className="mr-3 rounded-circle img-github" />
                     <div className="media-body">
-                    <h4 className="r-subheading">{userObject.name}</h4>
-                    <p className="r-text-small"><span className="font-weight-bold">Username</span>: {userObject.login}</p>
+                    <h4 className="r-subheading"><span className="font-weight-bold">Github: </span><a href={userObject.login}></a></h4>
                     <p className="r-text-small"><span className="font-weight-bold">Public Repos</span>: {userObject.public_repos}</p>
-                    <p>{userObject.html_url}</p>
-                    <p className="r-text-small"><span className="font-weight-bold">Bio</span>: {userObject.bio}</p>
                     </div>
                 </div>
                 
