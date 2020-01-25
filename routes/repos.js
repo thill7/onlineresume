@@ -3,7 +3,7 @@ const axios = require('axios');
 const mongoose = require('mongoose');
 const language = mongoose.model("language");
 
-router.get('/get/most_recent_push', (req,res) => {
+router.get('/get/most_recent_push', async (req,res) => {
     if(process.env.TOKEN == undefined) {
         res.json({"error":"please provide proper authentication."});
     }
