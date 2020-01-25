@@ -29,6 +29,8 @@ export default class UserInfo extends Component {
 
         var {userObject,lastPush} = this.state;
 
+        var lastPushedDate = new Date(lastPush);
+
         if(userObject != undefined && lastPush != undefined) {
             return(
                 <div className="row p-3 bg-darker m-4 text-white rounded">
@@ -36,9 +38,10 @@ export default class UserInfo extends Component {
                         <img src={userObject.avatar_url} alt={userObject.login} className="mr-3 rounded-circle img-github" />
                     </div>
                     <div className="col-xs-8 d-flex flex-column align-items-center align-items-lg-start justify-content-center">
-                        <h4 className="r-subheading"><span className="font-weight-bold">Github</span>: <a className="link-github" href={userObject.html_url}>{userObject.login}</a></h4>
+                        <p className="r-subheading"><span className="font-weight-bold">Github</span>: <a className="link-github" href={userObject.html_url}>{userObject.login}</a></p>
                         <p className="r-text-small"><span className="font-weight-bold">Public Repos</span>: {userObject.public_repos}</p>
                         <p className="r-text-small"><span className="font-weight-bold">Hireable</span>: <FontAwesomeIcon icon={userObject.hireable ? faCheckCircle : faWindowClose} /></p>
+                        <p className="r-text-small"><span className="font-weight-bold">Last push</span>: {`${lastPushedDate.getMonth() + 1}/${lastPushedDate.getDate()}/${lastPushedDate.getFullYear()} at ${(lastPushedDate.getHours() + 1) % 12}:${lastPushedDate.getMinutes()} ${lastPushedDate.getHours() >= 11 ? "PM" : "AM"}`}</p>
                     </div>
                 </div>
                 
