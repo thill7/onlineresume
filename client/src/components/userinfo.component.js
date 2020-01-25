@@ -41,7 +41,7 @@ export default class UserInfo extends Component {
                         <p className="r-subheading"><span className="font-weight-bold">Github</span>: <a className="link-github" href={userObject.html_url}>{userObject.login}</a></p>
                         <p className="r-text-small"><span className="font-weight-bold">Public Repos</span>: {userObject.public_repos}</p>
                         <p className="r-text-small"><span className="font-weight-bold">Hireable</span>: <FontAwesomeIcon icon={userObject.hireable ? faCheckCircle : faWindowClose} /></p>
-                        <p className="r-text-small"><span className="font-weight-bold">Last push</span>: {`${lastPushedDate.getMonth() + 1}/${lastPushedDate.getDate()}/${lastPushedDate.getFullYear()} at ${(lastPushedDate.getHours() + 1) % 12}:${lastPushedDate.getMinutes()} ${lastPushedDate.getHours() >= 11 ? "PM" : "AM"}`}</p>
+                        <p className="r-text-small"><span className="font-weight-bold">Last push</span>: {`${lastPushedDate.getMonth() + 1}/${lastPushedDate.getDate()}/${lastPushedDate.getFullYear()} at ${lastPushedDate.getHours() + 1}:${lastPushedDate.getMinutes() + 1} ${lastPushedDate.getHours() >= 11 ? "PM" : "AM"}`}</p>
                     </div>
                 </div>
                 
