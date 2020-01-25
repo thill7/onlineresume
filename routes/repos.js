@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const axios = require('axios');
-const dotenv = require('dotenv').config();
 const mongoose = require('mongoose');
 const language = mongoose.model("language");
 
@@ -8,7 +7,7 @@ router.get('/get',async (req,res) => {
     if(process.env.TOKEN == undefined) {
         res.json({"error":"please provide proper authentication."});
     }
-    var repos = await axios.get('https://api.github.com/user/repos',{headers: {
+    var repos = await axios.get('https://api.github.com/user/repos?per_page=100&sort=pushed',{headers: {
         'Authorization': 'Bearer ' + process.env.TOKEN
       }
     });
