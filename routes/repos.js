@@ -3,11 +3,22 @@ const axios = require('axios');
 const mongoose = require('mongoose');
 const language = mongoose.model("language");
 
-router.get('/get',async (req,res) => {
+router.get('/get/most_recent_push', (req,res) => {
     if(process.env.TOKEN == undefined) {
         res.json({"error":"please provide proper authentication."});
     }
     var repos = await axios.get('https://api.github.com/user/repos?per_page=100&sort=pushed',{headers: {
+        'Authorization': 'Bearer ' + process.env.TOKEN
+      }
+    });
+    res.json(repos.data);
+});
+
+router.get('/get',async (req,res) => {
+    if(process.env.TOKEN == undefined) {
+        res.json({"error":"please provide proper authentication."});
+    }
+    var repos = await axios.get('https://api.github.com/user/repos',{headers: {
         'Authorization': 'Bearer ' + process.env.TOKEN
       }
     });

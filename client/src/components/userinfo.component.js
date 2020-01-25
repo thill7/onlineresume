@@ -16,7 +16,7 @@ export default class UserInfo extends Component {
     async componentDidMount() {
         try {
             var newUserData = await axios.get("/users/get/"+this.state.login);
-            var repoData = await axios.get("/repos/get");
+            var repoData = await axios.get("/repos/get/most_recent_push");
             var mostRecentPush = repoData.data[0].pushed_at;
             this.setState({userObject:newUserData.data,lastPush:mostRecentPush});
         }
