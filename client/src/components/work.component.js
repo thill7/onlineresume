@@ -33,22 +33,10 @@ export default class Work extends Component {
                 <p className="r-header-2">Work History</p>
                 {
                     work.map(w => {
-                        let startDate = w.startDate != null ? new Date(w.startDate) : new Date();
-                        let endDate = w.endDate != null ? new Date(w.endDate) : new Date();
-                        return(
-                            <div className="card bg-darker" key={w._id}>
-                                <div className="card-header bg-primary">
-                                    <p className="r-header-4">{w.employer}</p>
-                                </div>
-                                <div className="card-body">
-                                    <div className="row">
-                                        <div className="col-md-2 my-2 d-flex flex-column justify-content-centered align-items-center">
-                                            <img className="img-work" src={w.imageUrl} />
-                                        </div>
-                                        <div className="col-md-10 my-2">
-                                            <p><span className="font-weight-bold">Description: </span>{w.jobDescription}</p>
-                                        </div>
-                                    </div>
+                        var commendations = <span></span>;
+                        if(w.commendations.length > 0) {
+                            commendations = (
+                                <div>
                                     <hr />
                                     <p className="r-subheading font-weight-bold">Commendations:</p>
                                     <ul className="list-group">
@@ -69,6 +57,26 @@ export default class Work extends Component {
                                             })
                                         }
                                     </ul>
+                                </div>
+                            );
+                        }
+                        let startDate = w.startDate != null ? new Date(w.startDate) : new Date();
+                        let endDate = w.endDate != null ? new Date(w.endDate) : new Date();
+                        return(
+                            <div className="card bg-darker my-4" key={w._id}>
+                                <div className="card-header bg-primary">
+                                    <p className="r-header-4">{w.employer}</p>
+                                </div>
+                                <div className="card-body">
+                                    <div className="row">
+                                        <div className="col-md-2 my-2 d-flex flex-column justify-content-centered align-items-center">
+                                            <img className="img-work bg-dark rounded" src={w.imageUrl} />
+                                        </div>
+                                        <div className="col-md-10 my-2">
+                                            <p><span className="font-weight-bold">Description: </span>{w.jobDescription}</p>
+                                        </div>
+                                    </div>
+                                    {commendations}
                                 </div>
                                 <div className="card-footer">
                                     <p className="r-subheading"><span className="font-weight-bold">Employed: </span> {`${startDate.getMonth() + 1}/${startDate.getDate()}/${startDate.getFullYear()}`+" - "+`${endDate.getMonth() + 1}/${endDate.getDate()}/${endDate.getFullYear()}`}</p>
