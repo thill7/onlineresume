@@ -32,7 +32,7 @@ export default class Work extends Component {
             <div>
                 <p className="r-header-2">Work History</p>
                 {
-                    work.map(w => {
+                    work.sort((a,b) => b.startDate - a.startDate).map(w => {
                         var commendations = <span></span>;
                         if(w.commendations.length > 0) {
                             commendations = (
