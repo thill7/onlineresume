@@ -69,10 +69,10 @@ export default class Work extends Component {
                                 </div>
                                 <div className="card-body">
                                     <div className="row">
-                                        <div className="col-md-2 my-2 d-flex flex-column justify-content-centered align-items-center">
-                                            <img className="img-work bg-dark rounded" src={w.imageUrl} />
+                                        <div className="col-md-4 my-2 d-flex flex-column justify-content-centered align-items-center">
+                                            <img className="img-work bg-dark rounded p-4" src={w.imageUrl} />
                                         </div>
-                                        <div className="col-md-10 my-2">
+                                        <div className="col-md-8 my-2">
                                             <p><span className="font-weight-bold">Description: </span>{w.jobDescription}</p>
                                         </div>
                                     </div>
