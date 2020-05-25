@@ -1,0 +1,55 @@
+@import 'base';
+
+.home-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-nav {
+    width: 80vmin;
+    display: inline-flex;
+    justify-content: space-evenly;
+    margin-top: 1vmax;
+    margin-bottom:1vmax;
+
+    a {
+        text-align: center;
+        font-weight: bold;
+        background: $colorPrimaryVariant !important;
+        padding: 2vmin;
+        transition: filter 0.25s ease;
+        color: $colorOnPrimaryVariant !important;
+        text-decoration: none;
+        margin: 0;
+        border-bottom: 0.25vmin solid $colorOnPrimaryVariant;
+
+        @include breakpoint('sm') {
+            border-bottom: none !important;
+        }
+
+        @include dark {
+            color: $colorOnPrimaryVariantDark !important;
+            background-color: $colorPrimaryVariantDark !important;
+            border-bottom: 0.25vmin solid $colorOnPrimaryVariantDark;
+        }
+
+        &:hover {
+            color: $colorOnPrimaryVariant;
+            @include dark {
+                color: $colorOnPrimaryVariantDark;
+            }
+            text-decoration: none;
+            filter: brightness(125%);
+        }
+    }
+}
+
+.img-github {
+    max-width: 20vmin;
+}

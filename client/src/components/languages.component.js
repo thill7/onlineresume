@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle, faWindowClose, faBorderNone } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faSpinner, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import Loading from './loading.component';
 
 export default class Languages extends Component {
     constructor(props) {
@@ -34,9 +35,7 @@ export default class Languages extends Component {
 
         if(!isLoaded) {
             return(
-                <div>
-                    <p className="r-subheading p-3 alert alert-info text-center">Loading...</p>
-                </div>
+                <Loading />
             )
         }
 
@@ -57,19 +56,19 @@ export default class Languages extends Component {
                         languages.map(language => {
                             let displayStyle = shownLanguage == 0 ? {} : (shownLanguage != language._id ? {display:"none"} : {});
                             return(
-                                <div className="col-md-6 my-3" key={language._id} style={displayStyle}>
-                                    <div className="card bg-darker text-white">
-                                        <div className="card-header bg-success"><p className="r-header-3"><span className="font-weight-bold">{language.language}</span></p></div>
+                                <div className="col-md-6 my-3" style="min-height:100%;" key={language._id} style={displayStyle}>
+                                    <div className="card bg-color-primary text-on-primary h-100 shadow">
+                                        <div className="card-header bg-color-primary-variant text-on-primary-variant"><p className="r-header-3"><span className="font-weight-bold">{language.language}</span></p></div>
                                         <div className="card-body">
                                             <dl className="row">
                                                 <dt className="col-md-6">Bytes written (from Github)</dt>
                                                 <dd className="col-md-6">{language.bytes}</dd>
                                                 <hr />
                                                 <dt className="col-md-6">Self-taught</dt>
-                                                <dd className="col-md-6"><FontAwesomeIcon icon={language.selfTaught ? faCheckCircle : faWindowClose}/></dd>
+                                                <dd className="col-md-6"><FontAwesomeIcon icon={language.selfTaught ? faCheckCircle : faTimesCircle}/></dd>
                                                 <hr />
                                                 <dt className="col-md-6">School-taught</dt>
-                                                <dd className="col-md-6"><FontAwesomeIcon icon={language.schoolTaught ? faCheckCircle : faWindowClose}/></dd>
+                                                <dd className="col-md-6"><FontAwesomeIcon icon={language.schoolTaught ? faCheckCircle : faTimesCircle}/></dd>
                                                 <hr />
                                                 <dt className="col-md-12">Info</dt>
                                                 <dd className="col-md-12">{language.info}</dd>

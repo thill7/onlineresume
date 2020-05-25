@@ -4,6 +4,8 @@ import { faCode, faHistory } from '@fortawesome/free-solid-svg-icons';
 import MainNav from './mainnav.component';
 import Languages from './languages.component';
 import Work from './work.component';
+import '../styles/mainnav.scss';
+import '../styles/experience.scss';
 
 export default class Experience extends Component {
     constructor(props) {
@@ -31,8 +33,8 @@ export default class Experience extends Component {
             <div>
                 <MainNav page="1" />
                 <div className="experience-toggle d-flex flex-column flex-md-row my-4">
-                    <button onClick={() => {this.onSetToggle(0);}} className={"r-subheading flex-fill"+(toggle == 0 ? " bg-secondary" : " bg-darker")}>Programming <FontAwesomeIcon icon={faCode}/></button>
-                    <button onClick={() => {this.onSetToggle(1);}} className={"r-subheading flex-fill"+(toggle == 1 ? " bg-secondary" : " bg-darker")}>Work History <FontAwesomeIcon icon={faHistory} /></button>
+                    <button onClick={() => {this.onSetToggle(0);}} className={"r-subheading flex-fill"+(toggle == 0 ? " bg-secondary" : " bg-color-primary-variant")}>Programming <FontAwesomeIcon icon={faCode}/></button>
+                    <button onClick={() => {this.onSetToggle(1);}} className={"r-subheading flex-fill"+(toggle == 1 ? " bg-secondary" : " bg-color-primary-variant")}>Work History <FontAwesomeIcon icon={faHistory} /></button>
                 </div>
                 <div className="container">
                     <div style={toggle == 1 ? noDisplay : {}}>

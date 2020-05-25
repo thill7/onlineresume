@@ -3,11 +3,9 @@ import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery.min';
 import 'bootstrap/dist/js/bootstrap.bundle';
-import './App.css';
 
 import Home from './components/home.component';
 import Contact from './components/contact.component';
-import MainNav from './components/mainnav.component';
 import Experience from './components/experience.component';
 import Education from './components/education.component';
 

@@ -1,0 +1,13 @@
+@import 'base';
+
+.wou {
+    fill: $colorOnPrimary;
+    background: $colorPrimary;
+    padding: 2vmax;
+}
+
+.wou img {
+    height:15vmax;
+    width: 100%;
+    object-fit:contain;
+}

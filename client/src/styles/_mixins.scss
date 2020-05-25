@@ -1,0 +1,25 @@
+$breakpoints: (
+    'sm': 767px,
+    'md': 992px,
+    'lg': 1200px
+) !default;
+
+
+
+@mixin breakpoint($bp) {
+    @if map-has-key($breakpoints, $bp) {
+        @media(min-width: map-get($breakpoints,$bp)) {
+            @content;
+        }
+    } 
+
+    @else {
+        @warn "There is no value for #{$bp}";
+    }
+}
+
+@mixin dark() {
+    @media (prefers-color-scheme: dark) {
+        @content;
+    }
+}

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import Loading from './loading.component';
 
 export default class Work extends Component {
     constructor(props) {
@@ -22,9 +23,7 @@ export default class Work extends Component {
 
         if(!isLoaded) {
             return(
-                <div>
-                    <p className="r-subheading p-3 alert alert-info text-center">Loading...</p>
-                </div>
+                <Loading />
             )
         }
 
@@ -32,7 +31,7 @@ export default class Work extends Component {
             <div>
                 <p className="r-header-2">Work History</p>
                 {
-                    work.sort((a,b) => a.startDate - b.startDate).map(w => {
+                    work.sort((a,b) => new Date(b.startDate) - new Date(a.startDate)).map(w => {
                         var commendations = <span></span>;
                         if(w.commendations.length > 0) {
                             commendations = (
@@ -43,10 +42,10 @@ export default class Work extends Component {
                                         {
                                             w.commendations.map(c => {
                                                 return(
-                                                <li key={c._id} className="list-group-item list-group-item-info">
+                                                <li key={c._id} className="list-group-item bg-color-primary-variant text-on-primary-variant">
                                                     <div className="row">
                                                         <div className="col-md-4">
-                                                            <p className="font-weight-bold">{c.title} <span className={c.recurrance != null ? "badge badge-dark" : ""}>{c.recurrance}</span></p>
+                                                            <p className="font-weight-bold">{c.title} <span className={c.recurrance != null ? "badge bg-secondary text-on-primary-variant" : ""}>{c.recurrance}</span></p>
                                                         </div>
                                                         <div className="col-md-8">
                                                             <p>{c.description}</p>
@@ -63,23 +62,23 @@ export default class Work extends Component {
                         let startDate = w.startDate != null ? new Date(w.startDate) : new Date();
                         let endDate = w.endDate != null ? new Date(w.endDate) : new Date();
                         return(
-                            <div className="card bg-darker my-4" key={w._id}>
-                                <div className="card-header bg-primary">
+                            <div className="card bg-color-primary text-on-primary my-4 shadow" key={w._id}>
+                                <div className="card-header bg-color-primary-variant text-on-primary-variant">
                                     <p className="r-header-4">{w.employer}</p>
                                 </div>
                                 <div className="card-body">
                                     <div className="row">
                                         <div className="col-md-4 my-2 d-flex flex-column justify-content-centered align-items-center">
-                                            <img className="img-work bg-dark rounded p-4" src={w.imageUrl} />
+                                            <img className="img-work bg-secondary rounded p-4" src={w.imageUrl} />
                                         </div>
                                         <div className="col-md-8 my-2">
-                                            <p><span className="font-weight-bold">Description: </span>{w.jobDescription}</p>
+                                            <p className="r-text-small"><span className="font-weight-bold">Description: </span>{w.jobDescription}</p>
                                         </div>
                                     </div>
                                     {commendations}
                                 </div>
                                 <div className="card-footer">
-                                    <p className="r-subheading"><span className="font-weight-bold">Employed: </span> {`${startDate.getMonth() + 1}/${startDate.getDate()}/${startDate.getFullYear()}`+" - "+`${endDate.getMonth() + 1}/${endDate.getDate()}/${endDate.getFullYear()}`}</p>
+                                    <p className="r-subheading"><span className="font-weight-bold">Employed: </span> {`${startDate.getMonth() + 1}/${startDate.getDate()}/${startDate.getFullYear()}`+" - "+`${endDate.getMonth() + 1}/${endDate.getDate()}/${endDate.getFullYear()}`} {w.endDate == null ? "| *Current Employer" : ""}</p>
                                 </div>
                             </div>
                         )

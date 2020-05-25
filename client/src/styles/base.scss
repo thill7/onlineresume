@@ -1,0 +1,120 @@
+@import 'mixins';
+@import 'colors';
+
+html {
+    height: 100%;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100%;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.bg-color-primary {
+    background-color: $colorPrimary !important;
+    @include dark {
+        background-color: $colorPrimaryDark !important;
+    }
+}
+
+.bg-color-primary-variant {
+    background-color: $colorPrimaryVariant !important;
+    @include dark {
+        background-color: $colorPrimaryVariantDark !important;
+    }
+}
+
+.bg-light {
+    @include dark {
+        background-color: $colorPrimaryDark !important;
+    }
+}
+
+.text-on-background {
+    color: $colorOnLight !important;
+    @include dark {
+        color: $colorOnPrimaryVariant !important;
+    }
+}
+
+.text-on-primary {
+    color: $colorOnPrimary !important;
+    @include dark {
+        color: $colorOnPrimaryDark !important;
+    }
+}
+
+.text-on-primary-variant {
+    color: $colorOnPrimaryVariant !important;
+    @include dark {
+        color: $colorOnPrimaryVariantDark !important;
+    }
+}
+
+.r-header-1 {
+    font-size: 12vmin !important;
+}
+
+.r-header-2 {
+    font-size: 10vmin !important;
+}
+
+.r-header-3 {
+    font-size: 8vmin !important;
+}
+
+.r-header-4 {
+    font-size: 6vmin !important;
+}
+
+.r-text-small {
+    font-size: 3vmin !important;
+}
+
+.r-subheading {
+    font-size: 5vmin !important;
+}
+
+.link-plain a {
+    color: inherit !important;
+    text-decoration: none !important;
+
+    &:hover {
+        color: inherit !important;
+        text-decoration: none !important;
+    }
+
+    &:visited {
+        color: inherit !important;
+        text-decoration: none !important;
+    }
+
+    &:active {
+        color: inherit !important;
+        text-decoration: none !important;
+    }
+}
+
+@keyframes spin {
+    from {transform:rotate(0);}
+    to {transform:rotate(360deg);}
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+}

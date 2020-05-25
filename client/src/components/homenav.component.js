@@ -8,7 +8,7 @@ export default class HomeNav extends Component {
 
     render() {
         return(
-            <div className="home-nav flex-column flex-md-row">
+            <div className="home-nav flex-column flex-md-row shadow">
                 <Link className="r-subheading flex-fill" to="/experience">Experience</Link>
                 <Link className="r-subheading flex-fill" to="/education">Education</Link>
                 <Link className="r-subheading flex-fill" to="/contact">Contact</Link>
