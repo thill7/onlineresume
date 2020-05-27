@@ -18,14 +18,14 @@ export default class Contact extends Component {
                             <p className="r-header-2">Tanner Hill</p>
                             <hr />
                         </div>
-                        <div className="col-md-6 p-4 d-inline-flex flex-column align-items-center justify-content-center">
+                        <div className="col-md-6 p-4 d-inline-flex flex-column align-items-center justify-content-around">
                             <p className="r-header-4"><FontAwesomeIcon icon={faPhone} /> Phone:</p>
-                            <p className="r-subheading pl-4"><FontAwesomeIcon icon={faCaretRight} /> <a href="tel:+16616076959">(661) 607-6959</a></p>
+                            <p className="r-subheading"><FontAwesomeIcon icon={faCaretRight} /> <a href="tel:+16616076959">(661) 607-6959</a></p>
                         </div>
-                        <div className="col-md-6 p-4 d-inline-flex flex-column align-items-center justify-content-center">
+                        <div className="col-md-6 p-4 d-inline-flex flex-column align-items-center justify-content-around">
                         <p className="r-header-4"><FontAwesomeIcon icon={faEnvelope}/> Email:</p>
-                            <p className="pl-4 r-subheading"><FontAwesomeIcon icon={faCaretRight} /> <a href="mailto:tanner.hill.96@gmail.com">Personal</a></p>
-                            <p className="pl-4 r-subheading"><FontAwesomeIcon icon={faCaretRight} /> <a href="mailto:thill17@wou.edu">School</a></p>
+                            <p className="r-subheading"><FontAwesomeIcon icon={faCaretRight} /> <a href="mailto:tanner.hill.96@gmail.com">Personal</a></p>
+                            <p className="r-subheading"><FontAwesomeIcon icon={faCaretRight} /> <a href="mailto:thill17@wou.edu">School</a></p>
                         </div>
                     </div>
                 </div>
