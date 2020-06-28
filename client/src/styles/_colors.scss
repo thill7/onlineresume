@@ -2,11 +2,13 @@ $colorPrimary: powderblue;
 $colorPrimaryVariant: dodgerblue;
 $colorOnPrimary: #444444;
 $colorOnPrimaryVariant: ghostwhite;
+$colorHighlight: adjust-hue($colorPrimaryVariant,180);
 
 $colorPrimaryDark: #343a40;
 $colorPrimaryVariantDark: #222222;
 $colorOnPrimaryDark: ghostwhite;
 $colorOnPrimaryVariantDark: ghostwhite;
+$colorHighlightDark: dodgerblue;
 
 $colorOnLight: #222222;
 

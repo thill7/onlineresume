@@ -57,7 +57,7 @@ export default class Languages extends Component {
                             let displayStyle = shownLanguage == 0 ? {} : (shownLanguage != language._id ? {display:"none"} : {});
                             return(
                                 <div className="col-md-6 my-3" style="min-height:100%;" key={language._id} style={displayStyle}>
-                                    <div className="card bg-color-primary text-on-primary h-100 shadow">
+                                    <div className="card bg-color-primary-light text-on-primary h-100 shadow">
                                         <div className="card-header bg-color-primary-variant text-on-primary-variant"><p className="r-header-3"><span className="font-weight-bold">{language.language}</span></p></div>
                                         <div className="card-body">
                                             <dl className="row">

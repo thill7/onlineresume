@@ -8,6 +8,7 @@ import Home from './components/home.component';
 import Contact from './components/contact.component';
 import Experience from './components/experience.component';
 import Education from './components/education.component';
+import Projects from './components/projects.component';
 
 function App() {
   return (
@@ -22,13 +23,16 @@ function App() {
       <Route path="/experience">
         <Experience />
       </Route>
+      <Route path="/projects">
+        <Projects />
+      </Route>
       <Route path="/education">
         <Education />
       </Route>
     </Switch>  
     <footer className="px-4 text-center">
       <hr />
-      <p>Tanner Hill – Western Oregon University {new Date().getFullYear()}</p>
+      <p>Tanner Hill – Western Oregon University {new Date().getFullYear()} | <a href="#" title="Coming Soon!">About This Site</a></p>
     </footer>
     </Router>
     

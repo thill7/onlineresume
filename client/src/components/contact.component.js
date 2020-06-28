@@ -11,7 +11,7 @@ export default class Contact extends Component {
     render() {
         return(
             <div>
-                <MainNav page="3"/>
+                <MainNav page="4"/>
                 <div className="container">
                     <div className="row text-white bg-color-primary-variant text-on-primary-variant m-4 rounded link-plain">
                         <div className="col-md-12 text-center">
@@ -24,8 +24,7 @@ export default class Contact extends Component {
                         </div>
                         <div className="col-md-6 p-4 d-inline-flex flex-column align-items-center justify-content-around">
                         <p className="r-header-4"><FontAwesomeIcon icon={faEnvelope}/> Email:</p>
-                            <p className="r-subheading"><FontAwesomeIcon icon={faCaretRight} /> <a href="mailto:tanner.hill.96@gmail.com">Personal</a></p>
-                            <p className="r-subheading"><FontAwesomeIcon icon={faCaretRight} /> <a href="mailto:thill17@wou.edu">School</a></p>
+                            <p className="r-subheading"><FontAwesomeIcon icon={faCaretRight} /> <a href="mailto:tanner.hill.96@gmail.com">Tanner.Hill.96@Gmail.com</a></p>
                         </div>
                     </div>
                 </div>

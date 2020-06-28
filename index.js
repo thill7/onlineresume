@@ -23,9 +23,11 @@ const connection = mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING, {use
 const classSchema = require('./models/class');
 const languageSchema = require('./models/language');
 const workSchema = require('./models/work');
+const projectSchema = require('./models/project');
 var language = mongoose.model("language",languageSchema);
 var classData = mongoose.model("classData",classSchema);
 var work = mongoose.model("work",workSchema);
+var project = mongoose.model("project",projectSchema);
 
 //routes
 const usersRoute = require('./routes/users');
@@ -34,6 +36,7 @@ const reposRoute = require('./routes/repos');
 const classesRoute = require('./routes/classes');
 const languagesRoute = require('./routes/languages');
 const workRoute = require("./routes/work");
+const projectRoute = require('./routes/projects');
 
 //middleware (routes)
 app.use('/users',usersRoute);
@@ -42,6 +45,7 @@ app.use('/repos',reposRoute);
 app.use('/classes',classesRoute);
 app.use('/languages',languagesRoute);
 app.use('/work',workRoute);
+app.use('/projects',projectRoute);
 
 if(process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));

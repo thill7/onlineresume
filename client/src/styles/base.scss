@@ -39,6 +39,13 @@ code {
     }
 }
 
+.bg-color-primary-light {
+    background-color: lighten($color: $colorPrimary, $amount: 10%) !important;
+    @include dark {
+        background-color: lighten($color: $colorPrimaryDark, $amount: 10%) !important;
+    }
+}
+
 .bg-light {
     @include dark {
         background-color: $colorPrimaryDark !important;
@@ -88,6 +95,12 @@ code {
 
 .r-subheading {
     font-size: 5vmin !important;
+}
+
+hr {
+    @include dark {
+        background-color: ghostwhite !important;
+    }
 }
 
 .link-plain a {

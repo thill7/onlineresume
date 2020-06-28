@@ -60,9 +60,9 @@ export default class Work extends Component {
                             );
                         }
                         let startDate = w.startDate != null ? new Date(w.startDate) : new Date();
-                        let endDate = w.endDate != null ? new Date(w.endDate) : new Date();
+                        let endDate = w.endDate != null ? new Date(w.endDate) : undefined;
                         return(
-                            <div className="card bg-color-primary text-on-primary my-4 shadow" key={w._id}>
+                            <div className="card bg-color-primary-light text-on-primary my-4 shadow" key={w._id}>
                                 <div className="card-header bg-color-primary-variant text-on-primary-variant">
                                     <p className="r-header-4">{w.employer}</p>
                                 </div>
@@ -78,7 +78,7 @@ export default class Work extends Component {
                                     {commendations}
                                 </div>
                                 <div className="card-footer">
-                                    <p className="r-subheading"><span className="font-weight-bold">Employed: </span> {`${startDate.getMonth() + 1}/${startDate.getDate()}/${startDate.getFullYear()}`+" - "+`${endDate.getMonth() + 1}/${endDate.getDate()}/${endDate.getFullYear()}`} {w.endDate == null ? "| *Current Employer" : ""}</p>
+                                    <p className="r-subheading"><span className="font-weight-bold">Employed: </span> {`${startDate.getMonth() + 1}/${startDate.getDate()}/${startDate.getFullYear()}`+" - "+ (endDate ? `${endDate.getMonth() + 1}/${endDate.getDate()}/${endDate.getFullYear()}` : "Currently Employed")}</p>
                                 </div>
                             </div>
                         )

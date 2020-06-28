@@ -1,0 +1,29 @@
+@import 'base';
+
+.autocomplete-list {
+    position: absolute;
+    top:100%;
+    left:0;
+    right:0;
+    width: 100%;
+    z-index: 99;
+    list-style: none;
+    padding-left: 0;
+    
+    li {
+        padding: 1vmin;
+        width: 100%;
+        background-color: $colorPrimaryVariantDark !important;
+        color: $colorOnPrimaryVariantDark !important;
+
+        @include dark {
+            background-color: $colorPrimaryVariant !important;
+            color: $colorOnPrimaryVariant !important;
+        }
+        transition: filter 0.5s ease;
+        filter:none;
+        &:hover {
+            filter: brightness(125%);
+        }
+    }
+}

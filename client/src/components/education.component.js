@@ -134,7 +134,7 @@ export default class Education extends Component {
                             return(
                                 
                                 <div className="col-md-6 my-3" key={data._id} style={displayStyle}>
-                                    <div className="card bg-color-primary text-on-primary h-100 shadow">
+                                    <div className="card bg-color-primary-light text-on-primary h-100 shadow">
                                         <div className="card-header bg-color-primary-variant text-on-primary-variant">
                                             <p className="r-subheading">{data.className}</p>
                                             <p className="r-text-small">{data.cardType+data.classNumber}</p>
