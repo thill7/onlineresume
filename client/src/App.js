@@ -9,6 +9,7 @@ import Contact from './components/contact.component';
 import Experience from './components/experience.component';
 import Education from './components/education.component';
 import Projects from './components/projects.component';
+import MainNav from './components/mainnav.component';
 
 function App() {
   return (

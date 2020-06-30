@@ -7,11 +7,55 @@
     justify-content: space-evenly;
     background: $colorPrimaryVariant !important;
     @include dark {
-        background: $colorPrimaryVariant;
+        background: $colorPrimaryVariantDark !important;
     }
-    position: sticky;
     margin-bottom: 2vmax;
-    box-shadow: 0 -1vmin 2.5vmin 0.5vmin black;
+    // box-shadow: 0 -1vmin 2.5vmin 0.5vmin black;
+}
+
+.main-nav.collapse {
+    @include breakpoint('md') {
+        display: flex;
+    }
+}
+
+.main-nav.collapse.show {
+    display: flex;
+}
+
+.main-nav-container {
+    position: sticky;
+    position: -webkit-sticky;
+    width: 100%;
+    top:0;
+    z-index: 99;
+}
+
+.main-nav-collapse {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    align-items: center;
+    padding: 2vmin;
+    z-index: 99;
+    background: $colorPrimaryVariant !important;
+    border-bottom: 0.5vmin solid $colorOnPrimary;
+    @include dark {
+        background: $colorPrimaryVariantDark !important;
+        border-bottom: 0.5vmin solid $colorOnPrimaryDark;
+    }
+    @include breakpoint('md') {
+        display: none;
+    }
+    span {
+        font-size: 5vmin;
+        text-align: right;
+        color: $colorOnPrimaryVariant;
+        @include dark {
+            color: $colorOnPrimaryVariantDark;
+        }
+    }
 }
 
 .main-nav a {
@@ -43,10 +87,10 @@
 
 .main-nav a.main-nav-active {
     color:$colorOnPrimary;
-    background-color:$colorPrimary;
+    background-color:darken(ghostwhite,5%);
     @include dark {
         color:$colorOnPrimaryDark;
-        background-color:$colorPrimaryDark;
+        background-color:darken($colorPrimaryDark,5%);
     }
 
     &:hover {
@@ -57,4 +101,10 @@
             color: $colorOnPrimaryDark;
         }
     }
+
+    @include breakpoint('md') {
+        border-top-right-radius: 1vmin;
+        border-top-left-radius: 1vmin;
+    }
+    
 }

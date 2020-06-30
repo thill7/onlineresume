@@ -11,7 +11,7 @@ export default class Loading extends Component {
     render() {
         return(
             <div className="container">
-                <p className="r-subheading p-3 alert bg-color-primary text-on-primary text-center"><FontAwesomeIcon icon={faSpinner} className="spinner"/> Loading...</p>
+                <p className="r-subheading p-3 alert text-on-primary text-center"><FontAwesomeIcon icon={faSpinner} className="spinner"/> Loading...</p>
             </div>
         )
     }
